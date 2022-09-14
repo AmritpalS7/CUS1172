@@ -1,0 +1,243 @@
+/*Project 1 - Amritpal Singh*/
+/*CSS StyleSheet*/
+/* List of Changes - as compared to Web Version:
+table resized
+form resized
+iframe resized
+iframe edited to keep aspect relationship
+images modified to auto adjust size
+columns collapse in favoriteWebsite section
+menu padding and position changed
+padding in various places changed */
+
+/*Element Selectors*/
+body{
+  background-color: #333;
+  color: white;
+}
+
+div{
+  margin: auto;
+  border: auto;
+}
+
+span{
+  font-weight: bold;
+  color: Aquamarine;
+}
+
+ul{
+      font-family: Noto Sans, sans-serif;
+}
+
+ol{
+      font-family: Noto Sans, sans-serif;
+      list-style-type: upper-roman;
+}
+
+
+li{
+    padding-top: 5px;
+}
+
+img{
+  border-radius: 8px;
+  max-width: 95%;
+  height: auto;
+}
+
+table{
+    font-family: Noto Sans, sans-serif;
+}
+
+input[type=text]{
+  width: 50%;
+  padding: 5px 8px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid LightSeaGreen;
+  border-radius: 4px;
+}
+
+input[type=submit]{
+  background-color: Aquamarine;
+  padding: 5px 8px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-color: LightSeaGreen;
+}
+
+h1 {
+  text-align:center;
+  color: Aquamarine;
+}
+
+h2{
+    font-family: Noto Sans, sans-serif;
+}
+
+h3{
+  text-align: left;
+  font-family: Noto Sans, sans-serif;
+
+}
+
+h4{
+    font-family: Noto Sans, sans-serif;
+}
+
+p{
+    font-family: Noto Sans, sans-serif;
+}
+
+a{
+  color: Aquamarine;
+}
+
+hr {
+  border-color: Aquamarine;
+}
+
+iframe{
+  max-width: 95%;
+  height: 56.25vw; /*using viewport to keep aspect ratio*/
+}
+
+/*Class and ID Selectors by Section*/
+/*Nav Bar/Menu*/
+#navbar ul{
+position: relative;
+border-radius: 5px;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #282828;
+width: 98.5%;
+}
+
+#navbar li {
+float: left;
+}
+
+#navbar li a {
+display: block;
+color: white;
+text-align: center;
+padding: 5px 7px;
+text-decoration: none;
+}
+
+#navbar li a:hover {
+background-color: #333;
+}
+
+#navbar li a:active {
+	background-color: Aquamarine;
+	}
+
+
+/*CSS for Home*/
+#home{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for basicProfileInfo Section*/
+#basicProfileInfo{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for educationSummary Section*/
+#educationSummary{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for workExperience Section*/
+#workExperience{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for programmingSkills Section*/
+#programmingSkills{
+  scroll-margin-top: 100px;
+}
+
+/*class selectors for ProgrammingSkills Table*/
+.box_table>table{
+  border-collapse: collapse;
+  width: 85%;
+}
+
+.box_table>table th, .box_table>table td{
+  border: 1px solid Aquamarine;
+  padding: 10px;
+  text-align: center;
+}
+
+.box_table>table th{
+  background-color: #111;
+}
+
+.box_table>table tr:nth-child(odd){
+  background-color: #222;
+}
+
+.box_table>table tr:hover{
+  background-color: LightSeaGreen;
+}
+
+/*CSS for generalInterests Section*/
+#generalInterests{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for favorites Section*/
+#favorites{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for favoriteWebsite Section*/
+#favoriteWebsite{
+  scroll-margin-top: 100px;
+}
+
+/*Class selectors for columns in favoriteWebsite section*/
+.column{
+  float: left;
+  width: 100%;
+  padding: 0 px;
+}
+
+.column2{
+  float: left;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.column3{
+  float: left;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*CSS for projects Section*/
+#projects{
+  scroll-margin-top: 100px;
+}
+
+
+/*Responsive design for print media viewing type*/
+@media print{
+  img{
+    display:none;
+  }
+  iframe{
+    display: none;
+  }
+}
