@@ -190,7 +190,7 @@ background-color: #333;
 /*Class selectors for columns in favoriteWebsite section*/
 .column{
   float: left;
-  width: 55%;
+  width: 35%;
   padding: 10px;
 }
 
