@@ -1,0 +1,243 @@
+/*Project 1 - Amritpal Singh*/
+/*CSS StyleSheet*/ 
+
+/*Element Selectors*/
+body{
+  background-color: #333;
+  color: white;
+}
+
+div{
+  margin: auto;
+  border: auto;
+}
+
+span{
+  font-weight: bold;
+  color: Aquamarine;
+}
+
+ul{
+      font-family: Noto Sans, sans-serif;
+}
+
+ol{
+      font-family: Noto Sans, sans-serif;
+      list-style-type: upper-roman;
+}
+
+
+li{
+    padding-top: 5px;
+}
+
+img{
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+table{
+    font-family: Noto Sans, sans-serif;
+}
+
+input[type=text]{
+  width: 350;
+  padding: 5px 8px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid LightSeaGreen;
+  border-radius: 4px;
+}
+
+input[type=submit]{
+  background-color: Aquamarine;
+  padding: 5px 8px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-color: LightSeaGreen;
+}
+
+h1 {
+  text-align:center;
+  color: Aquamarine;
+}
+
+h2{
+    font-family: Noto Sans, sans-serif;
+}
+
+h3{
+  text-align: left;
+  font-family: Noto Sans, sans-serif;
+
+}
+
+h4{
+    font-family: Noto Sans, sans-serif;
+}
+
+p{
+    font-family: Noto Sans, sans-serif;
+}
+
+a{
+  color: Aquamarine;
+}
+
+hr {
+  border-color: Aquamarine;
+}
+
+
+/*Class and ID Selectors by Section*/
+/*Nav Bar/Menu*/
+#navbar ul{
+position: fixed;
+border-radius: 15px;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #252525;
+width: 98.5%;
+}
+
+#navbar li {
+float: left;
+}
+
+#navbar li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+#navbar li a:hover {
+background-color: #333;
+}
+
+#navbar li a:active {
+	background-color: Aquamarine;
+	}
+
+
+/*CSS for Home*/
+#home{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for basicProfileInfo Section*/
+#basicProfileInfo{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for educationSummary Section*/
+#educationSummary{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for workExperience Section*/
+#workExperience{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for programmingSkills Section*/
+#programmingSkills{
+  scroll-margin-top: 100px;
+}
+
+/*class selectors for ProgrammingSkills Table*/
+.box_table>table{
+  border-collapse: collapse;
+  width: 40%;
+}
+
+.box_table>table th, .box_table>table td{
+  border: 1px solid Aquamarine;
+  padding: 10px;
+  text-align: center;
+}
+
+.box_table>table th{
+  background-color: #111;
+}
+
+.box_table>table tr:nth-child(odd){
+  background-color: #222;
+}
+
+.box_table>table tr:hover{
+  background-color: LightSeaGreen;
+}
+
+/*CSS for generalInterests Section*/
+#generalInterests{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for favorites Section*/
+#favorites{
+  scroll-margin-top: 100px;
+}
+
+/*CSS for favoriteWebsite Section*/
+#favoriteWebsite{
+  scroll-margin-top: 100px;
+}
+
+/*Class selectors for columns in favoriteWebsite section*/
+.column{
+  float: left;
+  width: 55%;
+  padding: 10px;
+}
+
+.column img{
+  display: block;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.column2{
+  float: left;
+  width: 30%;
+  padding-top: 5%;
+}
+
+.column3{
+  float: left;
+  width: 30%;
+  padding-top: 12%;
+}
+
+
+
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*CSS for projects Section*/
+#projects{
+  scroll-margin-top: 100px;
+}
+
+
+/*Responsive design for print media viewing type*/
+@media print{
+  img{
+    display:none;
+  }
+  iframe{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px){
+  #navbar ul{
+    position: relative;
+  }
+}
