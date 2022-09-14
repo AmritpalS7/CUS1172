@@ -196,8 +196,8 @@ background-color: #333;
 
 .column img{
   display: block;
-   margin-right: auto;
-   margin-left: auto;
+   margin-right: 10%;
+   margin-left: 0px;
 }
 
 .column2{
