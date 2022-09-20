@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!--List of BootStrap Elements:
+grid: Containers, rows and columns
+Images - rounded and auto resizing
+jumbotron
+button
+collapse
+navbar
+form - selectList
+toast
+scrollspy
+-->
+
+<html>
+   <head>
+     <title> Project 1 - Amritpal Singh </title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+     <link rel="stylesheet" href="https://amritpals7.github.io/CUS1172/Project1/CSS/Project1_CSS_Web_2.css">
+     <link rel="stylesheet" href="https://amritpals7.github.io/CUS1172/Project1/CSS/Project1_CSS_Mobile_2.css" media="screen and (max-width:575px)">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+     <style>
+     h3{
+       font-style:italic;
+       color: white;
+       padding-top: 15px;
+       padding-bottom: 15px;
+     }
+
+     .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-brand {
+        color: Aquamarine;
+      }
+     </style>
+   </head>
+
+   <body data-spy="scroll" data-target=".navbar" data-offset="110">
+
+     <!--Menu Section-->
+     <nav class="navbar navbar-expand-lg bgNavColor navbar-dark fixed-top">
+       <a class="navbar-brand" href="#">Project 1</a>
+
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="collapsibleNavbar" style="padding-bottom:8px; padding-top:8px">
+
+         <ul class = "navbar-nav">
+           <li class = "nav-item">
+             <a class = "nav-link" href="#home"> Home </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#basicProfileInfo"> Profile Information </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#educationSummary"> Education Summary </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#workExperience"> Work Experience </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#programmingSkills"> Programming Skills </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#generalInterests"> General Interests </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link"href="#favorites"> Favorite Media</a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#favoriteWebsite"> Favorite Website </a>
+           </li>
+           <li class = "nav-item">
+             <a class = "nav-link" href="#projects"> My Projects </a>
+           </li>
+        </ul>
+      </nav>
+
+
+
+      <!--header-->
+      <div id="home" class="jumbotron text-center mb-0"  style="background-color:#292929; padding-top:110px"> <!--has extra padding at top instead of a <br>-->
+
+        <h1> Web App Dev - Project 1 </h1>
+        <h2> Amritpal Singh </h2>
+        <h3> Direct <a href="https://www.github.com/AmritpalS7/CUS1172/tree/main/Project1" target="_blank">Link</a> to the Associated Repository</h3>
+        <div class="toast bgNavColor" style="max-width:300px" data-autohide="false">
+          <div class="toast-header" style="background-color:#333">
+            <strong class="mr-auto textPrimary">Welcome</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" style="color:white">&times;</button>
+          </div>
+
+      <div class="toast-body">
+        Welcome to my site!
+      </div>
+
+
+
+        <script>
+          $(document).ready(function(){
+            $('.toast').toast('show');
+          });
+          </script>
+      </div>
+    </div>
+
+
+     <hr>
+
+
+
+     <!--Basic Profile Info Section-->
+     <div id="basicProfileInfo" class="container-fluid">
+       <h3> Basic Profile Information</h3>
+       <p> <span>Name:</span> Amritpal Singh </p>
+       <p> <span>Major:</span> Computer Science </p>
+       <p> <span>Favorite Food:</span> Mint-Chocolate Chip Ice Cream </p>
+       <img src="https://amritpals7.github.io/CUS1172/Project1/images/unknown.jpg" class="rounded img-fluid" width=400 >
+     </div>
+
+
+     <hr>
+
+
+     <!--Education Summary Section-->
+     <div id="educationSummary" class="container-fluid">
+       <h3>Education Summary</h3>
+       <p>
+           Currently, I am a Senior here at St. John's University working towards my Bachelor's of Science in Computer Science. I plan to graduate at the end of this semester once I meet the requirements.
+           <br>In regards to my past education, I graduated from Academy of American Studies in Long Island City, NY with an Advanced Regents Diploma.
+       </p>
+     </div>
+
+
+     <hr>
+
+
+     <!--Work Experience Section-->
+     <div id="workExperience" class="container-fluid">
+       <h3>Work Experience and Projects</h3>
+       <ul>
+         <li>Computer Science Tutor in Java and JavaFx</li>
+         <li>Cashier - Old Navy</li>
+         <li>Created interactive app for building PCs</li>
+         <li>Worked on may other smaller individual and group projects, such as games and an inventory management system</li>
+         <li>Currently working on a visual Turing Machine Editor</li>
+       </ul>
+     </div>
+
+
+     <hr>
+
+
+     <!--Programming Skills Section-->
+     <div id="programmingSkills" class="box_table container-fluid"> <!--I prefer the CSS Table to bootstrap - easier to do more advanced customization-->
+       <h3>Programming Skills</h3>
+       <table>
+         <tr>
+           <th>Language</th>
+           <th>Proficiency</th>
+         </tr>
+         <tr>
+           <td>Java</td>
+           <td> Well Versed</td>
+         </tr>
+         <tr>
+           <td>JavaFX</td>
+           <td> Well Versed</td>
+         </tr>
+         <tr>
+           <td>MySQL</td>
+           <td>Moderate</td>
+         </tr>
+         <tr>
+           <td>C++</td>
+           <td>Moderate</td>
+         </tr>
+         <tr>
+           <td>C#</td>
+           <td>Moderate</td>
+         </tr>
+         <tr>
+           <td>Python</td>
+           <td>Limited</td>
+         </tr>
+         <tr>
+           <td>HTML</td>
+           <td>Limited</td>
+         </tr>
+         <tr>
+           <td>JavaScript</td>
+           <td>Limited</td>
+         </tr>
+        </table>
+       </div>
+
+
+     <hr>
+
+
+     <!--General Interests Section-->
+     <div id="generalInterests" class="container-fluid">
+       <h3>General Interests</h3>
+       <ol>
+         <li><span>Tech:</span> I enjoy learning about all the latest technology. I find it fascinating how things continue to evolve and am excited for future advancements. I feel like I could talk for hours about certain things.</li>
+         <li><span>Travel:</span> Exploring and discovering new places and foods is always fun. Over the summer I went to Boston, Maine and Canada. It's crazy to see all the diversity in terms of things like food and landscapes/tourist attractions.</li>
+         <li><span>Coding:</span> I am working on polishing up my C++ skills thoroughn working on a visual Turing Machine Editor. Last semester in one of my classes we worked with Turing Machines and it was interesting how even the most complex of mathematical/computer science problems could be solved with a machine that has such basic instructions.
+           It is hard to visualize and see how they work, so I thought creating a visual representation could be useful in itself and could bolster my resume.</li>
+         <li><span>Cars:</span> I've recently had a spike in interest for Japanese and European cars and their car scenes. I like seeing creations come to life and having the ability to customize something so much to appeal to every sense and make it different from the base that it was created from.</li>
+         <li><span>Video Games:</span> In my spare time I like to play video games with friends. Among my favorites are Valorant, Call of Duty, Rocket League and TeamFight Tactics.</li>
+       </ol>
+     </div>
+
+
+     <hr>
+
+
+     <!--Favorite Song, Film and TV Show Section-->
+     <div id="favorites" class="container-fluid">
+       <h3>Favorite Song, Film and TV Show</h3>
+
+       <div class="row">
+         <div class="col-lg-4 pl-4">
+           <h4>Favorite Song</h4>
+           <p>I listen to music from all types of genres and I don't have a favorite song of all time, but at this moment the one I'm listening to on repeat is <span style="background-color:#004466;color:white;font-weight:normal">Live In Myth</span>
+           by Brock Wilson. I find it to just be a very chill song that I have on in the background when doing schoolwork or playing games.</p>
+         </div>
+         <div class="col-sm-12 col-lg-6">
+           <div class="video-container">
+             <iframe src="https://www.youtube.com/embed/5_YeAD8e_Gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ml-0 mr-auto d-block"></iframe>
+           </div>
+         </div>
+     </div>
+     <div class="row">
+        <div class="col-lg-4 pl-4">
+          <h4>Favorite Film</h4>
+          <p> <span style="background-color:#4d0066;color:white;font-weight:normal">Ford vs Ferrari</span> takes place in the early 60s and follows the story of how Carrol Shelby and Ken Miles helped build a racecar to beat Ferrari in the 24 Hours of Le Mans . In this scene, Carrol Shelby recently agreed to help Ford create a racecar
+            that could beat Ferrari and he invites Ken to test drive for him. It is one of my favorites because it shows the fun yet business oriented relationship between the two and Ken's fixation of creating the best racecar in the world. I also love Matt Damon and Christian Bale who played Shelby and Miles respectively.</p>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/v1RX0RAOeVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="mx-auto d-block"></iframe>
+          </div>
+       </div>
+     </div>
+     <div class="row">
+        <div class="col-lg-4 pl-4">
+          <h4>Favorite TV Show</h4>
+          <p><span style="background-color:#00664d;color:white;font-weight:normal">The Boys</span> is a highly unique, modern and realistic take on superheroes and their roles in society. It's one of my favorite shows because of the unpredictability and plot twists that it offers around every corner.
+            This scene is from the beginning of the first season and shows how Hughie takes a leap from electronic store clerk to anti-superhero fighter by joining forces with Butcher, the main anti-super character. Note: This scene has a lot of cursing. There are
+            a lot of other good scenes, but most of them are much more violent and graphic.</p>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/lxcC3M7cQDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="mx-auto d-block"></iframe>
+         </div>
+        </div>
+      </div>
+    </div>
+
+
+     <hr>
+
+
+     <!--Favorite Website-->
+     <div id="favoriteWebsite" class="container-fluid">
+     <h3>Favorite Website</h3>
+     <p>I find that I'm not that artistic of a person, at least I have good ideas, but when it comes to execution, ie drawing/painting, I'm a mess. That's why I find websites
+       that help that creativity come to life are really fun to mess around with. My two favorite websites are:</p>
+     <div class= "row">
+       <div class= "col-md-6">
+         <h4><a href="https://beta.openai.com/playground" target="_blank"> OpenAI </a></h4>
+         <p> This website allows you to write in a bunch of initial instrunctions and the AI will do it's best to finish it, however an account is required for use. A lot of the time the results
+          are very entertaining. Here's a good/funny one that one of my friends made.</p>
+          <br>
+          <img src="https://i.redd.it/xmju8biob1891.png" width=550 class="rounded img-fluid"> <!--Image from third party, not hosted by GitHub. My friend also posted it on reddit https://www.reddit.com/r/aigreentext/comments/vlf49z/ainon_controls_the_market/ -->
+       </div>
+       <div class= "col-md-6">
+         <h4><a href="https://app.wombo.art" target="_blank"> Wombo </a></h4>
+           <p> This website also uses AI, but to create images from words/phrases in many different styles including watercolor, physcic, steampunk and my personal favorite synthwave. It isn't super HD, but the results can be quite incredible.
+              Here's one that I created, which represent a futuristic glass city.</p>
+            <img src="https://amritpals7.github.io/CUS1172/Project1/images/unknown1.jpg" width=300 class="rounded img-fluid">
+       </div>
+     </div>
+    </div>
+
+     <hr>
+
+
+     <!--My projects Section-->
+     <div id="projects" class="container-fluid">
+       <h3>My Projects in this Course</h3>
+       <h4><span>Note:</span> <span style="color:white; font-weight:normal"> this section will be updated as this course continues </span></h4>
+       <ul>
+         <li><span>Project 1: </span><span style="background-color:#004d4d;color:white;font-weight:normal"> Create and Deploy a Website using HTML, CSS and BootStrap </span>
+           <ul>
+             <li><p>Milestone 1 - Creating a profile page using HTML</p>
+            <p><a href="https://amritpals7.github.io/CUS1172/Project1/html/index1.html"> Link </a> to Milestone One. </p>
+            </li>
+            <li><p> Milestone 2 - Implement CSS into the profile page<p>
+              <p><a href="https://amritpals7.github.io/CUS1172/Project1/html/index2.html"> Link </a> to Milestone Two. </p>
+            </li>
+            <li><p> Currently in Progress: Milestone 3 - Use BootStrap to style the page <p>
+              <p><a href="https://amritpals7.github.io/CUS1172/Project1/html/index3.html"> Link </a> to Milestone Three. </p>
+            </li>
+          </li>
+        </ul>
+      </div>
+
+      <hr>
+
+
+    <!--form section-->
+    <div class="container-fluid">
+     <form>
+        <div class="row pl-2" style="padding-top:0; padding-bottom:0">
+        <select name="rating" class="custom-select-sm mb-3" style="border:2px solid LightSeaGreen">
+            <option selected>Rate the Website(1-5)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="row pl-2" style="padding-top:0; padding-bottom:10px">
+        <textarea name="suggestions"  placeholder="Write any suggestions you may have..."></textarea>
+        <input type="button" class="btn bgPrimary" value="Submit" data-toggle="collapse" data-target="#success">
+        <div id="success" class="collapse">
+          Thanks for your response! Your input is successful. Nothing happens with the data, as the back end has not been set up yet!
+        </div>
+      </div>
+      </form>
+
+      <br>
+
+      <p> Thanks for visiting! </p>
+      <i class="material-icons" style="font-size:36px;color:Aquamarine">favorite_border</i>
+    </div>
+   </body>
+
+</html>
