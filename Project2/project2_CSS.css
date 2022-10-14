@@ -1,0 +1,83 @@
+body{
+  background-color: #333;
+  color: white;
+  padding-top: 56px;
+}
+
+p{
+  margin:0;
+  color: Aquamarine;
+}
+
+.bgNavColor{
+  background-color: #292929;
+}
+
+.navbar-dark .navbar-brand {
+   color: Aquamarine;
+ }
+
+.card{
+  background-color: #292929;
+  margin: 10px;
+}
+
+.card-header{
+  color: Aquamarine;
+}
+
+input[type=text]{
+  background-color: #292929;
+  color: white;
+  max-width: 1200px;
+}
+
+input[type=radio]{
+  accent-color: Aquamarine;
+}
+
+select option{
+  background-color: #292929;
+  color: white;
+  max-width: 1200px;
+}
+
+.form-control{
+    background-color: #292929;
+    color: white;
+}
+
+#task-priority{
+  max-width: 550px;
+}
+
+.btn{
+  background-color: Aquamarine;
+  margin-top: 7%;
+  transition-duration: .4s;
+
+}
+
+.btn:hover{
+  background-color: white;
+}
+#add-card{
+  min-height: 25vh;
+}
+
+#list-card{
+  min-height: 54vh;
+}
+
+button{
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-right: 20px;
+  background-color: white;
+  transition-duration: 0.4s;
+  color: #212529;
+}
+
+button:hover{
+  background-color: Aquamarine;
+}

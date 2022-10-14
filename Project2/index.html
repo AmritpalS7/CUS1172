@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+
+<head>
+  <title>Project 2 - To Do List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="project2_CSS.css">
+  <script src="project2.js"></script>
+
+</head>
+
+<body>
+  <div id = "navbar">
+     <nav class="navbar navbar-expand-lg bgNavColor navbar-dark fixed-top">
+         <a class="navbar-brand" href="#">Project 2 - To Do List - Amritpal Singh</a>
+    </nav>
+  </div>
+
+  <div class = "container-fluid">
+    <div class = "card" id="add-card">
+      <div class="card-header">Add a task to your To-Do list!</div>
+      <div class="card-body">
+        <form class="needs-validation" id="myForm" novalidate >
+
+
+          <div class = "form-row">
+            <div class = "col">
+            <div class = "form-group">
+              <label for = "task-title">Title:</label>
+              <input id="task-title" type = "text" class="form-control" placeholder = "Enter the task title" name="title" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            </div>
+          </div>
+
+
+          <div class = form-row>
+          <div class = "col-md-4">
+          <div class = "form-group">
+            <label for = "task-priority">Select the task priority:</label>
+            <select class="form-control" id="task-priority" name="priority" required>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+          </div>
+
+
+          <div class = "col-md-3">
+            <label for="task-status">Select the task status:</label>
+            </br>
+
+
+                <input type="radio" id="completed" name="task-status" value="Completed" required>
+                <label for="html">Completed</label><br>
+                <input type="radio" id="inprogress" name="task-status" value="In Progress">
+                <label for="css">In Progress</label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
+          </div>
+
+          <div class="col-md-2">
+            <button id="submitNewTask" type="submit" class = "btn">Submit</button>
+          </div>
+            </div>
+        </form>
+        <div class="form-row" id="feedback">
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class = "container-fluid">
+    <div class = "card" id="list-card">
+      <div class = "card-header"> Your To-Do List </div>
+      <div class = "card-body">
+        <ul id = "to-do">
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
