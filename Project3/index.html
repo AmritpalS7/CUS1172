@@ -1,1 +1,270 @@
-a
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <link rel="stylesheet" href="project3_CSS.css">
+    <script src="project3_JS.js"></script>
+
+  </head>
+  <body>
+    <div id = "navbar">
+       <nav class="navbar navbar-expand-lg bgTertiaryColor fixed-top">
+           <a class="navbar-brand" href="#" style="font-weight:bold;">Project 3 - Quiz App - Amritpal Singh</a>
+           <label class="switch">
+             <input type="checkbox" id="colorSwitch" checked>
+             <span class="slider round"></span>
+           </label>
+      </nav>
+    </div>
+
+    <div id="widget_view" class="container-fluid">
+    </div>
+  </body>
+
+  <script id="intro_view" type="text/x-handlebars-template">
+    <div class="container">
+      <div class = "card">
+        <h4 style="text-align:left">Please enter your name then select a quiz to begin!</h4>
+        </div>
+
+      <div class="row">
+          <div class="col-12">
+            <div class="card" id="sName">
+            <form class="needs-validation" id="myForm" novalidate>
+              <div class="form-group">
+                <label for="user_name" style="font-weight:bold">Student Name:</label>
+                <input type="text" class="form-control" id="user_name" placeholder="Enter Your Name" required>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              </form>
+          </div>
+      </div>
+    </div>
+
+      <div class = "row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+              <span>HTML/CSS</span>
+              <button id="htmlstartbutton" class="btn btn-accent float-right" data-action="{{this.action}}">Start Quiz</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+              <span>Java</span>
+              <button id="javastartbutton" class="btn btn-accent float-right" data-action="{{this.action}}">Start Quiz</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  </script>
+
+  <script id="question_view_true_false" type="text/x-handlebars-template">
+    <div class = "col-9">
+            <div class="card">
+              <div class="card-body">
+              <span> {{this.qText}}</span>
+              </div>
+            </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <button class="btn btn-true pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
+                      <button class="btn btn-false float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </script>
+
+  <script id="question_view_text_input" type="text/x-handlebars-template">
+    <div class="col-9">
+            <div class="card">
+              <div class="card-body">
+              <span> {{this.qText}} </span>
+              </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+              <input type="text" id="textAnswer" name="answer">
+              <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+
+  <script id="question_view_multiple_choice" type="text/x-handlebars-template">
+    <div class="col-9">
+            <div class="card">
+              <div class="card-body">
+              <span> {{this.qText}} </span>
+              </div>
+              </div>
+               <div class="card">
+                <div class="card-body">
+                   <form>
+                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[0]}}"> {{this.options.[0]}}<br>
+                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[1]}}"> {{this.options.[1]}}<br>
+                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[2]}}"> {{this.options.[2]}}<br>
+                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[3]}}"> {{this.options.[3]}}<br>
+                    </form>
+                  <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          </script>
+
+  <script id="question_view_image" type="text/x-handlebars-template">
+    <div class="col-9">
+            <div class="card">
+              <div class="card-body">
+              <span> {{this.qText}} </span>
+              </div>
+                <img src="{{this.imageSource}}"/>
+              </div>
+               <div class="card">
+                <div class="card-body">
+                   <form>
+                     <input type="radio" name="imageTextAnswer" value="{{this.options.[0]}}"> {{this.options.[0]}}<br>
+                     <input type="radio" name="imageTextAnswer" value="{{this.options.[1]}}"> {{this.options.[1]}}<br>
+                     <input type="radio" name="imageTextAnswer" value="{{this.options.[2]}}"> {{this.options.[2]}}<br>
+                     <input type="radio" name="imageTextAnswer" value="{{this.options.[3]}}"> {{this.options.[3]}}<br>
+                    </form>
+                  <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </script>
+
+        <script id="question_view_imageAnswer" type="text/x-handlebars-template">
+            <div class = "col-9">
+                  <div class="card">
+                    <div class="card-body">
+                    <span> {{this.qText}} </span>
+                    </div>
+                    </div>
+                     <div class="card">
+                      <div class="card-body">
+                         <form>
+                           <div class="row">
+                             <div class="col-xl-6">
+                           <input type="radio" name="imageAnswer" value="{{this.imageSources.[0]}}"> <img src="{{this.imageSources.[0]}}"/><br>
+                         </div>
+                          <div class="col-xl-6">
+                           <input type="radio" name="imageAnswer" value="{{this.imageSources.[1]}}">  <img src="{{this.imageSources.[1]}}"/><br>
+                         </div>
+                            </div>
+                          </form>
+                        <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </script>
+
+            <script id="tracker" type="text/x-handlebars-template">
+              <div class="container-fluid">
+                <div class = "row">
+                  <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-xl-7">
+                          <button class = "btn btn-accent float-left" onclick="returnToStart()">
+                            Return to menu
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xl-5">
+                          <div class="progress float-right" style="width: 95%;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bgProgressColor" role="progressbar" id="pBar"></div>
+                          </div>
+                          <br>
+                          <div class="progress-value float-right" id="pValue">
+                          </div>
+                        </div>
+                    </div>
+                      <h5 class="card-title">Current Score: <span id="currScore"></span> </h5>
+                      <h6 id="elapTime"> Elapsed Time:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                          <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557
+                          4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011
+                          1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+                        </svg>
+                        <span class="elapsed-time-text">00:00</span>
+                      </h6>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body scrollbar scrollbar-info" id="qContainer">
+                  <ul id="pastQuestions" style="list-style-type:none;">
+                  </ul>
+                </div>
+              </div>
+
+              </div>
+            </script>
+
+  <script id="feedback_view_correct" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Great Work!</h5>
+            <p>You answered the question correctly!</p>
+            </div>
+          </div>
+        </div>
+  </script>
+
+  <script id="feedback_view_incorrect" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Incorrect!</h5>
+            <p>{{this.explanation}}</p>
+            <button class="btn btn-accent float-right" data-action="submit">Got It!</button>
+            </div>
+          </div>
+        </div>
+  </script>
+
+  <script id="end_view" type="text/x-handlebars-template">
+      <div class="container">
+              <div class="card">
+                <div class="card-body">
+                <h3 class="card-title"> Thank you for taking the quiz!</h3>
+                <span id="currScore"></span>
+                <button class="btn btn-accent float-right" data-action="start_again">Back to Menu</button>
+                <button class="btn btn-accent float-right" style="margin-right:15px;" data-action="retake_quiz">Retake Quiz</button>
+              </div>
+            </div>
+          </div>
+    </script>
+</html>
+
