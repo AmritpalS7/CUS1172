@@ -1,3 +1,9 @@
+<!--
+  Amritpal Singh
+  CUS 1172
+  Project 3 - html
+-->
+
 <!DOCTYPE html>
 
 <html>
@@ -10,10 +16,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
+    <title>Quiz App</title>
     <link rel="stylesheet" href="Project3_CSS.css">
     <script src="Project3_JS.js"></script>
-
   </head>
+
+  <!--Navbar section-->
   <body>
     <div id = "navbar">
        <nav class="navbar navbar-expand-lg bgTertiaryColor fixed-top">
@@ -25,10 +33,13 @@
       </nav>
     </div>
 
+    <!--Widget view - gets modified through handlebars-->
     <div id="widget_view" class="container-fluid">
     </div>
   </body>
 
+
+  <!--Intro View-->
   <script id="intro_view" type="text/x-handlebars-template">
     <div class="container">
       <div class = "card">
@@ -66,24 +77,26 @@
               </div>
             </div>
           </div>
-        </div>
+      </div>
   </script>
 
+
+<!--True False View-->
   <script id="question_view_true_false" type="text/x-handlebars-template">
     <div class = "col-9">
-            <div class="card">
-              <div class="card-body">
-              <span> {{this.qText}}</span>
+      <div class="card">
+        <div class="card-body">
+          <span> {{this.qText}}</span>
+        </div>
+       </div>
+       <div class="card">
+         <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <button class="btn btn-true pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
+                <button class="btn btn-false float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
               </div>
             </div>
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-6">
-                      <button class="btn btn-true pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
-                      <button class="btn btn-false float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
-                    </div>
-                </div>
           </div>
         </div>
       </div>
@@ -91,110 +104,118 @@
   </div>
   </script>
 
+
+  <!--Text Input View-->
   <script id="question_view_text_input" type="text/x-handlebars-template">
     <div class="col-9">
-            <div class="card">
-              <div class="card-body">
-              <span> {{this.qText}} </span>
-              </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-              <input type="text" id="textAnswer" name="answer">
-              <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
-            </div>
-          </div>
+      <div class="card">
+        <div class="card-body">
+          <span> {{this.qText}} </span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <input type="text" id="textAnswer" name="answer">
+          <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+ </script>
+
+
+  <!--Multiple Choice View-->
+  <script id="question_view_multiple_choice" type="text/x-handlebars-template">
+    <div class="col-9">
+      <div class="card">
+        <div class="card-body">
+          <span> {{this.qText}} </span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[0]}}"> {{this.options.[0]}}<br>
+            <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[1]}}"> {{this.options.[1]}}<br>
+            <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[2]}}"> {{this.options.[2]}}<br>
+            <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[3]}}"> {{this.options.[3]}}<br>
+          </form>
+          <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
   </script>
 
 
-
-  <script id="question_view_multiple_choice" type="text/x-handlebars-template">
-    <div class="col-9">
-            <div class="card">
-              <div class="card-body">
-              <span> {{this.qText}} </span>
-              </div>
-              </div>
-               <div class="card">
-                <div class="card-body">
-                   <form>
-                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[0]}}"> {{this.options.[0]}}<br>
-                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[1]}}"> {{this.options.[1]}}<br>
-                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[2]}}"> {{this.options.[2]}}<br>
-                     <input type="radio" name="multipleChoiceAnswer" value="{{this.options.[3]}}"> {{this.options.[3]}}<br>
-                    </form>
-                  <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-          </script>
-
+  <!--Image as Question View-->
   <script id="question_view_image" type="text/x-handlebars-template">
     <div class="col-9">
-            <div class="card">
-              <div class="card-body">
-              <span> {{this.qText}} </span>
-              </div>
-                <img src="{{this.imageSource}}"/>
-              </div>
-               <div class="card">
-                <div class="card-body">
-                   <form>
-                     <input type="radio" name="imageTextAnswer" value="{{this.options.[0]}}"> {{this.options.[0]}}<br>
-                     <input type="radio" name="imageTextAnswer" value="{{this.options.[1]}}"> {{this.options.[1]}}<br>
-                     <input type="radio" name="imageTextAnswer" value="{{this.options.[2]}}"> {{this.options.[2]}}<br>
-                     <input type="radio" name="imageTextAnswer" value="{{this.options.[3]}}"> {{this.options.[3]}}<br>
-                    </form>
-                  <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
-              </div>
-            </div>
+      <div class="card">
+         <div class="card-body">
+            <span> {{this.qText}} </span>
+          </div>
+          <img src="{{this.imageSource}}"/>
+       </div>
+       <div class="card">
+          <div class="card-body">
+             <form>
+                <input type="radio" name="imageTextAnswer" value="{{this.options.[0]}}"> {{this.options.[0]}}<br>
+                <input type="radio" name="imageTextAnswer" value="{{this.options.[1]}}"> {{this.options.[1]}}<br>
+                <input type="radio" name="imageTextAnswer" value="{{this.options.[2]}}"> {{this.options.[2]}}<br>
+                <input type="radio" name="imageTextAnswer" value="{{this.options.[3]}}"> {{this.options.[3]}}<br>
+              </form>
+              <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+           </div>
+        </div>
+    </div>
+  </div>
+</div>
+  </script>
+
+
+  <!--Image As Answer View-->
+   <script id="question_view_imageAnswer" type="text/x-handlebars-template">
+      <div class = "col-9">
+        <div class="card">
+          <div class="card-body">
+             <span> {{this.qText}} </span>
           </div>
         </div>
-      </div>
-        </script>
-
-        <script id="question_view_imageAnswer" type="text/x-handlebars-template">
-            <div class = "col-9">
-                  <div class="card">
-                    <div class="card-body">
-                    <span> {{this.qText}} </span>
-                    </div>
-                    </div>
-                     <div class="card">
-                      <div class="card-body">
-                         <form>
-                           <div class="row">
-                             <div class="col-xl-6">
-                           <input type="radio" name="imageAnswer" value="{{this.imageSources.[0]}}"> <img src="{{this.imageSources.[0]}}"/><br>
-                         </div>
-                          <div class="col-xl-6">
-                           <input type="radio" name="imageAnswer" value="{{this.imageSources.[1]}}">  <img src="{{this.imageSources.[1]}}"/><br>
-                         </div>
-                            </div>
-                          </form>
-                        <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
-                    </div>
-                  </div>
+        <div class="card">
+          <div class="card-body">
+            <form>
+               <div class="row">
+                 <div class="col-xl-6">
+                    <input type="radio" name="imageAnswer" value="{{this.imageSources.[0]}}"> <img src="{{this.imageSources.[0]}}"/><br>
+                 </div>
+                 <div class="col-xl-6">
+                    <input type="radio" name="imageAnswer" value="{{this.imageSources.[1]}}">  <img src="{{this.imageSources.[1]}}"/><br>
+                 </div>
                 </div>
-              </div>
-            </div>
-              </script>
+            </form>
+            <button class="btn btn-accent float-right" data-action="submitAnswer">Submit</button>
+          </div>
+         </div>
+       </div>
+    </div>
+ </div>
+    </script>
 
-            <script id="tracker" type="text/x-handlebars-template">
-              <div class="container-fluid">
-                <div class = "row">
-                  <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-xl-7">
-                          <button class = "btn btn-accent float-left" onclick="returnToStart()">
-                            Return to menu
+
+    <!--Tracker View-->
+    <script id="tracker" type="text/x-handlebars-template">
+       <div class="container-fluid">
+          <div class = "row">
+             <div class="col-3">
+                <div class="card">
+                   <div class="card-body">
+                      <div class="row">
+                        <div class="col-xl-7">
+                           <button class = "btn btn-accent float-left" onclick="returnToStart()">
+                              Return to menu
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                               <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
                               <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -227,44 +248,48 @@
                   </ul>
                 </div>
               </div>
-
-              </div>
+            </div>
             </script>
 
+
+  <!--Correct Response View-->
   <script id="feedback_view_correct" type="text/x-handlebars-template">
     <div class="container">
       <div class="card">
-          <div class="card-body">
+        <div class="card-body">
             <h5 class="card-title">Great Work!</h5>
             <p>You answered the question correctly!</p>
-            </div>
-          </div>
-        </div>
+         </div>
+       </div>
+     </div>
   </script>
 
+
+  <!--Incorrect Response View-->
   <script id="feedback_view_incorrect" type="text/x-handlebars-template">
     <div class="container">
       <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Incorrect!</h5>
-            <p>{{this.explanation}}</p>
-            <button class="btn btn-accent float-right" data-action="submit">Got It!</button>
-            </div>
-          </div>
-        </div>
+        <div class="card-body">
+          <h5 class="card-title">Incorrect!</h5>
+          <p>{{this.explanation}}</p>
+          <button class="btn btn-accent float-right" data-action="submit">Got It!</button>
+         </div>
+       </div>
+     </div>
   </script>
 
+
+  <!--End Quiz View-->
   <script id="end_view" type="text/x-handlebars-template">
       <div class="container">
-              <div class="card">
-                <div class="card-body">
-                <h3 class="card-title"> Thank you for taking the quiz!</h3>
-                <span id="currScore"></span>
-                <button class="btn btn-accent float-right" data-action="start_again">Back to Menu</button>
-                <button class="btn btn-accent float-right" style="margin-right:15px;" data-action="retake_quiz">Retake Quiz</button>
-              </div>
+        <div class="card">
+           <div class="card-body">
+              <h3 class="card-title"> Thank you for taking the quiz!</h3>
+              <span id="currScore"></span>
+              <button class="btn btn-accent float-right" data-action="start_again">Back to Menu</button>
+              <button class="btn btn-accent float-right" style="margin-right:15px;" data-action="retake_quiz">Retake Quiz</button>
             </div>
-          </div>
+        </div>
+      </div>
     </script>
 </html>
-
